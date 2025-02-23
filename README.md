@@ -62,6 +62,15 @@ To send a message to Kafka, make a POST request to the following endpoint:
 POST /api/messages
 ```
 
+```
+curl -X POST http://localhost:8080/api/kafka/send \
+-H "Content-Type: application/json" \
+-d '{
+  "topic": "your_topic_name",
+  "content": "This is a test message"
+}'
+```
+
 **Request Body:**
 ```json
 {
