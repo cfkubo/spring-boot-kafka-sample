@@ -1,0 +1,94 @@
+### Java ###
+*.class
+*.log
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+replay_pid*
+
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+### Spring Boot ###
+**/application-*.properties
+!**/application-test.properties
+**/application-*.yml
+!**/application-test.yml
+*.env
+.env.*
+
+### IDE - VSCode ###
+.vscode/
+*.code-workspace
+.history/
+
+### IDE - IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+### IDE - Eclipse ###
+.classpath
+.project
+.settings/
+.metadata/
+bin/
+tmp/
+
+### macOS ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+### Logs ###
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+### Testing ###
+coverage/
+.coverage
+.tox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+### Misc ###
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+*.temp
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.crt
+*.csr
+*.jks
+*.p12
+*.pkcs12

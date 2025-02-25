@@ -1,5 +1,7 @@
 com/example/model/Message.class
 com/example/config/KafkaConfig.class
+com/example/config/EnableSwagger2.class
 com/example/service/KafkaService.class
 com/example/controller/KafkaController.class
 com/example/SpringBootKafkaAppApplication.class
+com/example/config/SwaggerConfig.class
