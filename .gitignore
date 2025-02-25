@@ -92,3 +92,9 @@ coverage.xml
 *.jks
 *.p12
 *.pkcs12
+
+# Kafka security files
+*.jks
+*.truststore
+*.keystore
+env.properties
