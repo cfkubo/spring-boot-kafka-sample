@@ -11,11 +11,14 @@ import com.example.service.KafkaService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RestController
 @RequestMapping("/api/kafka")
 @Api(value = "Kafka Controller", description = "Operations pertaining to Kafka messaging")
 public class KafkaController {
+    private static final Logger logger = LoggerFactory.getLogger(KafkaController.class);
 
     @Autowired
     private KafkaService kafkaService;
@@ -36,9 +39,22 @@ public class KafkaController {
                 return null;
     }
 
+    @GetMapping("/home")
+    @ApiOperation(value = "Get welcome message")
+    public String home() {
+        return "Welcome to Spring Boot Kafka Application! \n\n" +
+               "To send a message, use: \n" +
+               "curl -X POST http://localhost:8080/api/kafka/send \\\n" +
+               "-H \"Content-Type: application/json\" \\\n" +
+               "-d '{\n" +
+               "  \"topic\": \"test-topic\",\n" +
+               "  \"content\": \"This is a test message\"\n" +
+               "}'";
+    }
+
     @KafkaListener(topics = "${kafka.topic.name}", groupId = "${kafka.group.id}")
     public void listen(String message) {
-        System.out.println("Received Message: " + message);
+        logger.info("Received Message in group '{}': {}", "${kafka.group.id}", message);
     }
 
     public String receiveMessages(ConsumerRecord<String, String> record) {
